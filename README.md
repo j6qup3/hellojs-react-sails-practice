@@ -3,4 +3,4 @@
 ```
 87
 ```
-![C8763](demo.png)
+![C8763](assets/demo.png)
