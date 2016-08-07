@@ -7,12 +7,7 @@ class UserItem extends React.Component {
     this.state = {value: this.props.name};
   }
   update() {
-    $.ajax({
-      url: '/user/' + this.props.id,
-      type: 'PUT',
-      data: {name: this.state.value},
-      success: this.props.callback
-    });
+    $.get('/user/update/' + this.props.id + '?name=' + this.state.value, this.props.callback);
   }
   delete() {
     $.get('/user/destroy?id=' + this.props.id, this.props.callback);
@@ -25,11 +20,11 @@ class UserItem extends React.Component {
   render() {
     return (
       <div>
-        <span>No.{this.props.id}</span> <input type="text" value={this.state.value} onChange={ this.handleChange } />
+        <span>No.{this.props.id}</span> {this.props.name} <input type="text" value={this.state.value} onChange={ this.handleChange } />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button onClick={this.update} className="btn btn-primary">更新</button>
+        <button onClick={this.update} className="btn btn-success">更新</button>
         &nbsp;&nbsp;&nbsp;
-        <button onClick={this.delete} className="btn btn-primary">刪除</button>
+        <button onClick={this.delete} className="btn btn-danger">刪除</button>
       </div>
     );
   }

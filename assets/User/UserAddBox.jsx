@@ -12,7 +12,7 @@ class UserAddBox extends React.Component {
   create() {
     $.get('/user/create?name=' + this.state.value, this.props.callback);
     this.setState({
-      value: Math.random().toString(36).substring(10)
+      value: this.rand()
     });
   }
   handleChange(event) {

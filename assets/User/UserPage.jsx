@@ -11,16 +11,14 @@ class UserPage extends React.Component {
       users: []
     };
     this.handleChange = this.handleChange.bind(this);
+    this.handleChange();
   }
   handleChange() {
-    $.get('/user', (list) => {
+    $.get('/user', list => {
       this.setState({
         users: list
       });
     });
-  }
-  componentWillMount() {
-    this.handleChange();
   }
   render() {
     return (
