@@ -1,6 +1,5 @@
 # HelloJS Week4 - React + Sails Practice
-## How to start
+# 94 狂快來仁
 ```
-npm install
-npm start
+87
 ```
